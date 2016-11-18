@@ -43,7 +43,7 @@ fi
 
 docker run -v `pwd`/results:/app/results \
   ${DOCKER_LINKS[@]} \
-  kuma_integration_tests:${GIT_COMMIT} py.test tests/functional --base-url=${BASE_URL:-"https://developer.allizom.org"}
+  kuma_integration_tests:${GIT_COMMIT} py.test tests/functional --driver Remote --capability browserName firefox --host hub --base-url=${BASE_URL:-"https://developer.allizom.org"}
 #  -e BASE_URL=${BASE_URL} \
 #  -e DRIVER=${DRIVER} \
 #  -e SAUCELABS_USERNAME=${SAUCELABS_USERNAME} \
