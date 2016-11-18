@@ -1,6 +1,7 @@
 #!/bin/bash -xe
 GIT_COMMIT=${GIT_COMMIT:-$(git rev-parse HEAD)}
 BASE_URL=${1:-${BASE_URL}}
+DRIVER=Remote
 docker build -f Dockerfile-integration-tests -t kuma_integration_tests:${GIT_COMMIT} --pull=true .
 
 
