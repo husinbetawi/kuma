@@ -25,6 +25,10 @@ node {
 
         break
 
+      case 'stage-integration-tests':
+        stage 'Stage integration tests'
+        sh 'docker/run_integration_tests.sh https://developer.allizom.org'
+
       default:
         // this assumes the latest base image from master is compatible with this branch
         // TODO: example special case branch that builds and uses a different base image
